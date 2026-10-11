@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugs &amp; Mugs Abuja | Warm Plates, Beautiful Moments</title>
+<meta name="description" content="Hugs &amp; Mugs Abuja serves rich Nigerian meals, luxe catering boxes, and warm cafe moments. Follow our socials for fresh menu drops and order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #170d09;
+    --bg-soft: #26150f;
+    --panel: rgba(33, 19, 14, 0.82);
+    --panel-solid: #21130e;
+    --cream: #f7efe4;
+    --sand: #dcc7a7;
+    --gold: #f0a13f;
+    --gold-deep: #d67a19;
+    --orange: #ffb15f;
+    --red: #8e2c12;
+    --text: #2b170e;
+    --text-soft: #6f5542;
+    --line: rgba(255, 235, 212, 0.16);
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    --radius-xl: 34px;
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --wrap: min(1180px, calc(100vw - 2rem));
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Bricolage Grotesque", sans-serif;
+    background:
+      radial-gradient(circle at top right, rgba(240, 161, 63, 0.12), transparent 28%),
+      radial-gradient(circle at bottom left, rgba(214, 122, 25, 0.16), transparent 24%),
+      var(--bg);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 4px 4px;
+    mix-blend-mode: soft-light;
+    z-index: 0;
+  }
+
+  .site-shell {
+    position: relative;
+    z-index: 1;
+  }
+
+  .top-note {
+    background: linear-gradient(90deg, rgba(240, 161, 63, 0.2), rgba(142, 44, 18, 0.5));
+    border-bottom: 1px solid rgba(255, 225, 187, 0.12);
+    text-align: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.92rem;
+    color: rgba(247, 239, 228, 0.88);
+  }
+
+  .top-note strong {
+    color: #fff;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(18px);
+    background: rgba(23, 13, 9, 0.72);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-inner {
+    width: var(--wrap);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: var(--bg);
+    font-size: 1.4rem;
+    box-shadow: 0 12px 28px rgba(240, 161, 63, 0.22);
+  }
+
+  .brand-copy strong {
+    display: block;
+    font-family: "Fraunces", serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+  }
+
+  .brand-copy span {
+    display: block;
+    font-size: 0.78rem;
+    color: rgba(247, 239, 228, 0.62);
+    margin-top: 0.15rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+    list-style: none;
+    font-size: 0.95rem;
+    color: rgba(247, 239, 228, 0.78);
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.3rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: #1f120b;
+    font-weight: 700;
+    box-shadow: 0 14px 34px rgba(214, 122, 25, 0.25);
+  }
+
+  .hero {
+    width: var(--wrap);
+    margin: 0 auto;
+    min-height: calc(100vh - 88px);
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 3.2rem 0 4rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 196, 118, 0.1);
+    border: 1px solid rgba(255, 202, 133, 0.16);
+    color: var(--orange);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(3rem, 6vw, 5.9rem);
+    line-height: 0.95;
+    max-width: 9ch;
+  }
+
+  .hero h1 span {
+    color: var(--orange);
+  }
+
+  .hero-copy p {
+    max-width: 42rem;
+    color: rgba(247, 239, 228, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-top: 1.35rem;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 999px;
+    padding: 0.95rem 1.5rem;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: #1f120b;
+    font-weight: 700;
+    box-shadow: 0 16px 36px rgba(214, 122, 25, 0.28);
+  }
+
+  .btn-secondary {
+    background: rgba(247, 239, 228, 0.06);
+    border: 1px solid rgba(255, 233, 207, 0.16);
+    color: #fff;
+  }
+
+  .btn-ghost {
+    border: 1px solid rgba(255, 233, 207, 0.16);
+    color: rgba(247, 239, 228, 0.76);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-ghost:hover {
+    transform: translateY(-2px);
+  }
+
+  .hero-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.1rem;
+  }
+
+  .hero-point {
+    padding: 1rem 1.05rem;
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-point strong {
+    display: block;
+    color: #fff;
+    font-size: 1.05rem;
+  }
+
+  .hero-point span {
+    display: block;
+    margin-top: 0.35rem;
+    color: rgba(247, 239, 228, 0.62);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .hero-visual {
+    position: relative;
+    min-height: 650px;
+  }
+
+  .photo-stack {
+    position: relative;
+    height: 100%;
+  }
+
+  .card-photo {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: var(--shadow);
+  }
+
+  .card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-photo.main {
+    inset: 2rem 0 4rem 5rem;
+  }
+
+  .card-photo.top {
+    width: 220px;
+    height: 180px;
+    top: 0;
+    left: 0;
+    transform: rotate(-7deg);
+  }
+
+  .card-photo.bottom {
+    width: 270px;
+    height: 200px;
+    right: 1rem;
+    bottom: 0;
+    transform: rotate(7deg);
+  }
+
+  .floating-story {
+    position: absolute;
+    left: 1.2rem;
+    bottom: 7rem;
+    width: min(280px, 100%);
+    padding: 1.1rem;
+    border-radius: 24px;
+    background: rgba(24, 12, 8, 0.86);
+    border: 1px solid rgba(255, 224, 192, 0.1);
+    backdrop-filter: blur(16px);
+  }
+
+  .floating-story strong {
+    display: block;
+    font-size: 0.92rem;
+    color: #fff;
+    margin-bottom: 0.45rem;
+  }
+
+  .floating-story p {
+    color: rgba(247, 239, 228, 0.66);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .section {
+    width: var(--wrap);
+    margin: 0 auto;
+    padding: 4.75rem 0;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .section-label {
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .section-title {
+    font-family: "Fraunces", serif;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    max-width: 11ch;
+  }
+
+  .section-sub {
+    max-width: 35rem;
+    color: rgba(247, 239, 228, 0.7);
+    line-height: 1.8;
+  }
+
+  .follow-strip {
+    background:
+      linear-gradient(135deg, rgba(240, 161, 63, 0.16), rgba(142, 44, 18, 0.3)),
+      rgba(33, 19, 14, 0.85);
+    border: 1px solid rgba(255, 213, 163, 0.14);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .follow-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .follow-message h3 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.08;
+    margin-bottom: 0.8rem;
+  }
+
+  .follow-message p {
+    color: rgba(247, 239, 228, 0.76);
+    line-height: 1.8;
+    max-width: 38rem;
+  }
+
+  .social-cards {
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .social-card {
+    padding: 1rem 1.05rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .social-card strong {
+    display: block;
+    color: #fff;
+    margin-bottom: 0.2rem;
+  }
+
+  .social-card span {
+    color: rgba(247, 239, 228, 0.62);
+    font-size: 0.86rem;
+  }
+
+  .social-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 188, 100, 0.12);
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .category-box {
+    padding: 1.25rem;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .category-box strong {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #fff;
+  }
+
+  .category-box span {
+    color: rgba(247, 239, 228, 0.62);
+    line-height: 1.6;
+    font-size: 0.88rem;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .menu-card {
+    overflow: hidden;
+    border-radius: 26px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: var(--shadow);
+  }
+
+  .menu-card img {
+    aspect-ratio: 1 / 0.84;
+    object-fit: cover;
+  }
+
+  .menu-copy {
+    padding: 1.35rem;
+  }
+
+  .menu-tag {
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 177, 95, 0.12);
+    color: var(--orange);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .menu-copy h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.35rem;
+    line-height: 1.1;
+  }
+
+  .menu-copy p {
+    color: rgba(247, 239, 228, 0.68);
+    line-height: 1.75;
+    margin: 0.7rem 0 1rem;
+    font-size: 0.94rem;
+  }
+
+  .menu-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .mini-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 0.86rem;
+  }
+
+  .mini-btn.order {
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    border-color: transparent;
+    color: #1f120b;
+    font-weight: 700;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.3rem;
+    margin-top: 2rem;
+  }
+
+  .info-panel {
+    padding: 1.7rem;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .info-panel h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .info-panel p,
+  .info-panel li {
+    color: rgba(247, 239, 228, 0.7);
+    line-height: 1.8;
+  }
+
+  .info-panel ul {
+    list-style: none;
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  .info-panel li {
+    padding-left: 1.3rem;
+    position: relative;
+  }
+
+  .info-panel li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 1.3rem;
+    margin-top: 2rem;
+  }
+
+  .contact-panel,
+  .enquiry-panel {
+    border-radius: 30px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 1.7rem;
+  }
+
+  .contact-stack {
+    display: grid;
+    gap: 0.95rem;
+    margin-top: 1.2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 0.95rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(240, 161, 63, 0.24), rgba(214, 122, 25, 0.32));
+    font-size: 1.1rem;
+  }
+
+  .contact-item strong {
+    display: block;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-item span {
+    color: rgba(247, 239, 228, 0.68);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .enquiry-panel h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .enquiry-panel p {
+    color: rgba(247, 239, 228, 0.7);
+    line-height: 1.8;
+    margin-bottom: 1.35rem;
+  }
+
+  .form-grid {
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .form-grid label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: rgba(247, 239, 228, 0.82);
+    font-size: 0.88rem;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border-radius: 16px;
+    padding: 0.95rem 1rem;
+    outline: none;
+  }
+
+  .form-grid textarea {
+    min-height: 126px;
+    resize: vertical;
+  }
+
+  .form-grid input::placeholder,
+  .form-grid textarea::placeholder {
+    color: rgba(247, 239, 228, 0.38);
+  }
+
+  .submit-btn {
+    margin-top: 0.4rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+
+  footer {
+    width: var(--wrap);
+    margin: 0 auto;
+    padding: 2rem 0 6rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    color: rgba(247, 239, 228, 0.62);
+  }
+
+  .footer-left strong {
+    display: block;
+    color: #fff;
+    margin-bottom: 0.35rem;
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-right a {
+    padding: 0.7rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .follow-modal {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    width: min(390px, calc(100vw - 2rem));
+    border-radius: 28px;
+    padding: 1.25rem;
+    background: rgba(21, 11, 8, 0.92);
+    border: 1px solid rgba(255, 217, 170, 0.16);
+    box-shadow: 0 18px 60px rgba(0,0,0,0.45);
+    backdrop-filter: blur(20px);
+    transform: translateY(28px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .follow-modal.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .follow-modal-head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .follow-modal h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.35rem;
+    line-height: 1.1;
+  }
+
+  .follow-modal p {
+    color: rgba(247, 239, 228, 0.72);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .close-modal {
+    border: none;
+    background: transparent;
+    color: rgba(247, 239, 228, 0.62);
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  .modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .sticky-order {
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    z-index: 45;
+    width: min(720px, calc(100vw - 2rem));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    background: rgba(20, 11, 8, 0.9);
+    border: 1px solid rgba(255, 215, 166, 0.14);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 16px 46px rgba(0,0,0,0.35);
+  }
+
+  .sticky-order span {
+    color: rgba(247, 239, 228, 0.76);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 1080px) {
+    .hero,
+    .follow-grid,
+    .contact-grid,
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .menu-grid,
+    .categories {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+      padding-top: 2.2rem;
+    }
+
+    .hero-visual {
+      min-height: 560px;
+    }
+
+    .card-photo.main {
+      inset: 3rem 0 4rem 2rem;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .nav-inner {
+      padding: 0.9rem 0;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .hero {
+      min-height: auto;
+      padding: 2rem 0 3rem;
+    }
+
+    .hero-points,
+    .menu-grid,
+    .categories {
+      grid-template-columns: 1fr;
+    }
+
+    .card-photo.main {
+      inset: 2.5rem 0 5rem 0;
+    }
+
+    .card-photo.top {
+      width: 160px;
+      height: 130px;
+    }
+
+    .card-photo.bottom {
+      width: 190px;
+      height: 140px;
+      right: 0;
+    }
+
+    .floating-story {
+      position: static;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .section {
+      padding: 3.6rem 0;
+    }
+
+    .follow-strip,
+    .contact-panel,
+    .enquiry-panel,
+    .info-panel {
+      padding: 1.25rem;
+    }
+
+    .sticky-order {
+      border-radius: 24px;
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .sticky-order .btn-primary {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <div class="site-shell">
+    <div class="top-note">
+      Follow <strong>TikTok</strong>, <strong>Instagram</strong>, and <strong>Facebook</strong> for live menu drops, delicacy updates, and daily food content. Orders are handled on <strong>WhatsApp only</strong>.
+    </div>
+
+    <nav>
+      <div class="nav-inner">
+        <a href="#home" class="brand">
+          <div class="brand-mark">☕</div>
+          <div class="brand-copy">
+            <strong>Hugs &amp; Mugs</strong>
+            <span>Abuja Food Stories</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#menu">Featured Menu</a></li>
+          <li><a href="#updates">Follow Us</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a class="nav-cta" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20would%20love%20to%20place%20an%20order.">
+          Order on WhatsApp
+        </a>
+      </div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">Abuja's warmest online cafe and catering brand</div>
+        <h1>Beautiful food that feels like a <span>warm embrace.</span></h1>
+        <p>
+          Hugs &amp; Mugs creates rich Nigerian dishes, show-stopping catering boxes, and comforting cafe-style moments for people who want flavour, warmth, and presentation in one place. We do not list fixed prices because the food market moves fast, so the freshest menu updates live on our social pages, while orders are handled directly on WhatsApp.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20want%20to%20place%20an%20order.">Order on WhatsApp</a>
+          <a class="btn-secondary" href="#updates">Follow for Menu Updates</a>
+          <a class="btn-ghost" href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>No stale menu pricing</strong>
+            <span>Fresh updates go out through our socials so customers always see current offerings.</span>
+          </div>
+          <div class="hero-point">
+            <strong>Orders via WhatsApp</strong>
+            <span>Fast replies, direct confirmations, and easy custom requests in one chat.</span>
+          </div>
+          <div class="hero-point">
+            <strong>Content worth following</strong>
+            <span>Menu drops, indulgent trays, behind-the-scenes clips, and fun food moments.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="photo-stack">
+          <div class="card-photo main">
+            <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_50_42.jpeg" alt="Hugs and Mugs luxury catering box">
+          </div>
+          <div class="card-photo top">
+            <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_52_12.jpeg" alt="Hugs and Mugs seafood soup">
+          </div>
+          <div class="card-photo bottom">
+            <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_51_37.jpeg" alt="Hugs and Mugs jollof spread">
+          </div>
+          <div class="floating-story">
+            <strong>Follow first. Crave harder.</strong>
+            <p>
+              TikTok, Instagram, and Facebook are where Hugs &amp; Mugs shares new delicacies, daily menu inspiration, and fun cafe content. When you are ready to order, we move the conversation to WhatsApp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="updates">
+      <div class="follow-strip">
+        <div class="follow-grid">
+          <div class="follow-message">
+            <div class="section-label">Follow For Fresh Drops</div>
+            <h3>Use the socials like a live menu board.</h3>
+            <p>
+              The food market is unstable, so instead of freezing the brand behind outdated pricing, this website now sends people where the real-time magic happens: your content channels. Visitors are encouraged to follow for new trays, fresh soups, party boxes, specials, and the kind of delicious content that keeps Hugs &amp; Mugs top of mind.
+            </p>
+          </div>
+
+          <div class="social-cards">
+            <a class="social-card" href="https://www.tiktok.com/@hugsandmugsabuja" target="_blank" rel="noreferrer">
+              <div>
+                <strong>TikTok</strong>
+                <span>@hugsandmugsabuja for menu clips, tray reveals, and fun food content.</span>
+              </div>
+              <span class="social-pill">Follow</span>
+            </a>
+
+            <a class="social-card" href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">
+              <div>
+                <strong>Instagram</strong>
+                <span>@hugsandmugsabuja for polished updates, delicious stills, and promo content.</span>
+              </div>
+              <span class="social-pill">Follow</span>
+            </a>
+
+            <a class="social-card" href="https://www.facebook.com/search/top?q=Hugs%20and%20Mugs%20Abuja" target="_blank" rel="noreferrer">
+              <div>
+                <strong>Facebook</strong>
+                <span>Find Hugs and Mugs Abuja for community updates, posts, and menu notices.</span>
+              </div>
+              <span class="social-pill">Open</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="categories">
+        <div class="category-box">
+          <strong>Menu updates</strong>
+          <span>Fresh tray drops, soup batches, and current offerings shared as they happen.</span>
+        </div>
+        <div class="category-box">
+          <strong>Delicacy highlights</strong>
+          <span>Seafood bowls, luxe boxes, rich soups, and indulgent rice platters that stop the scroll.</span>
+        </div>
+        <div class="category-box">
+          <strong>Fun content</strong>
+          <span>Behind-the-scenes prep, serving moments, and playful food content for loyal followers.</span>
+        </div>
+        <div class="category-box">
+          <strong>WhatsApp fulfilment</strong>
+          <span>Once customers are ready, every order, enquiry, and custom request is handled on WhatsApp.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Featured Plates</div>
+          <h2 class="section-title">A menu built for cravings, parties, and premium comfort.</h2>
+        </div>
+        <p class="section-sub">
+          Prices are intentionally not shown here. Instead, this section helps visitors understand the kind of food experience they can expect before they head to social media for current drops or WhatsApp for direct ordering.
+        </p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_52_28.jpeg" alt="Afang and okra soup selection">
+          <div class="menu-copy">
+            <span class="menu-tag">Signature Soups</span>
+            <h3>Deep, rich soup pots with serious character.</h3>
+            <p>Afang, okra, and thick Nigerian favourites made to feel hearty, generous, and deeply satisfying.</p>
+            <div class="menu-actions">
+              <a class="mini-btn order" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20want%20to%20enquire%20about%20your%20soups.">Order on WhatsApp</a>
+              <a class="mini-btn" href="https://www.tiktok.com/@hugsandmugsabuja" target="_blank" rel="noreferrer">See updates</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_51_57.jpeg" alt="Assorted traditional soups">
+          <div class="menu-copy">
+            <span class="menu-tag">Traditional Favourites</span>
+            <h3>Classic Nigerian delicacies, cooked with presence.</h3>
+            <p>From dark leafy soups to richly seasoned assorted proteins, every tray is built to look lavish and taste unforgettable.</p>
+            <div class="menu-actions">
+              <a class="mini-btn order" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20want%20to%20order%20a%20traditional%20meal.">Order on WhatsApp</a>
+              <a class="mini-btn" href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">View socials</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_50_42.jpeg" alt="Luxury catering and party box">
+          <div class="menu-copy">
+            <span class="menu-tag">Party Boxes</span>
+            <h3>Statement catering boxes for birthdays and celebrations.</h3>
+            <p>Assorted meats, desserts, spring rolls, noodles, shrimp, fruits, and premium presentation in one unforgettable spread.</p>
+            <div class="menu-actions">
+              <a class="mini-btn order" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20want%20to%20enquire%20about%20a%20party%20box.">Get a quote</a>
+              <a class="mini-btn" href="https://www.tiktok.com/@hugsandmugsabuja" target="_blank" rel="noreferrer">Watch content</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_52_12.jpeg" alt="Seafood soup bowl">
+          <div class="menu-copy">
+            <span class="menu-tag">Seafood Specials</span>
+            <h3>Luxurious bowls with bold colour and bold flavour.</h3>
+            <p>Rich seafood soups and premium proteins made for customers who want indulgence and comfort in the same bowl.</p>
+            <div class="menu-actions">
+              <a class="mini-btn order" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20am%20interested%20in%20your%20seafood%20options.">Order on WhatsApp</a>
+              <a class="mini-btn" href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">See latest posts</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_51_37.jpeg" alt="Rice trays and sides">
+          <div class="menu-copy">
+            <span class="menu-tag">Rice &amp; Sides</span>
+            <h3>Tray-ready rice meals that belong at every gathering.</h3>
+            <p>Jollof rice, chicken, sides, and celebration-style servings designed to feed both intimate hangouts and bigger crowds.</p>
+            <div class="menu-actions">
+              <a class="mini-btn order" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20would%20love%20to%20order%20rice%20and%20sides.">Order on WhatsApp</a>
+              <a class="mini-btn" href="https://www.facebook.com/search/top?q=Hugs%20and%20Mugs%20Abuja" target="_blank" rel="noreferrer">Follow on Facebook</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-04-24_at_20_44_05.jpeg" alt="Hugs and Mugs logo">
+          <div class="menu-copy">
+            <span class="menu-tag">Cafe Identity</span>
+            <h3>A brand that feels playful, premium, and memorable.</h3>
+            <p>Hugs &amp; Mugs is not just food for today. It is the kind of brand people follow to see what delicious thing comes next.</p>
+            <div class="menu-actions">
+              <a class="mini-btn" href="#updates">Follow our channels</a>
+              <a class="mini-btn order" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20would%20like%20to%20make%20an%20enquiry.">Make an enquiry</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Brand Story</div>
+          <h2 class="section-title">Made for people who want warmth on the plate and joy in the feed.</h2>
+        </div>
+        <p class="section-sub">
+          The new website keeps the brand polished and aspirational while leaning into how customers really buy today: discover on social, fall in love with the visuals, then message on WhatsApp when they are ready.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-panel">
+          <h3>Why this website works harder now</h3>
+          <ul>
+            <li>It removes static prices so the brand never looks outdated in a volatile market.</li>
+            <li>It clearly tells customers where to go for live menu updates and where to place actual orders.</li>
+            <li>It positions Hugs &amp; Mugs as both a food business and a content brand people should keep following.</li>
+            <li>It uses lush imagery, strong typography, and confident copy to make the brand feel premium.</li>
+          </ul>
+        </div>
+
+        <div class="info-panel">
+          <h3>What customers are guided to do</h3>
+          <ul>
+            <li>See the style of food and catering Hugs &amp; Mugs is known for.</li>
+            <li>Follow TikTok, Instagram, and Facebook for ongoing menu and delicacy updates.</li>
+            <li>Contact the cafe on WhatsApp at <strong>07063423268</strong> when they want to order.</li>
+            <li>Use email for brand enquiries, partnerships, or more formal communication.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Contact &amp; Orders</div>
+          <h2 class="section-title">Follow for updates. WhatsApp for fulfilment.</h2>
+        </div>
+        <p class="section-sub">
+          This split is now crystal clear across the whole site: social platforms are for content and menu discovery, while order fulfilment happens through WhatsApp.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-panel">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 1.9rem;">Reach Hugs &amp; Mugs</h3>
+          <div class="contact-stack">
+            <a class="contact-item" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer">
+              <div class="contact-icon">💬</div>
+              <div>
+                <strong>WhatsApp Orders</strong>
+                <span>07063423268. The only channel for placing and confirming orders.</span>
+              </div>
+            </a>
+
+            <a class="contact-item" href="https://www.tiktok.com/@hugsandmugsabuja" target="_blank" rel="noreferrer">
+              <div class="contact-icon">🎵</div>
+              <div>
+                <strong>TikTok Content</strong>
+                <span>@hugsandmugsabuja for daily food videos, updates, and more exciting brand moments.</span>
+              </div>
+            </a>
+
+            <a class="contact-item" href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">
+              <div class="contact-icon">📸</div>
+              <div>
+                <strong>Instagram Updates</strong>
+                <span>@hugsandmugsabuja for visual menu inspiration, delicacy drops, and polished posts.</span>
+              </div>
+            </a>
+
+            <a class="contact-item" href="https://www.facebook.com/search/top?q=Hugs%20and%20Mugs%20Abuja" target="_blank" rel="noreferrer">
+              <div class="contact-icon">📘</div>
+              <div>
+                <strong>Facebook Presence</strong>
+                <span>Find Hugs and Mugs Abuja for more updates, posts, and community-facing content.</span>
+              </div>
+            </a>
+
+            <a class="contact-item" href="mailto:tosinizedomi@gmail.com">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>tosinizedomi@gmail.com for enquiries, collaboration, and official communication.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="enquiry-panel">
+          <h3>Send your order brief</h3>
+          <p>
+            Fill this out and we will package the message neatly into WhatsApp so ordering still feels smooth, direct, and personal.
+          </p>
+
+          <div class="form-grid">
+            <div>
+              <label for="customerName">Your name</label>
+              <input id="customerName" type="text" placeholder="e.g. Amaka James">
+            </div>
+
+            <div>
+              <label for="customerPhone">Phone or WhatsApp number</label>
+              <input id="customerPhone" type="tel" placeholder="e.g. 0801 234 5678">
+            </div>
+
+            <div>
+              <label for="orderType">What do you need?</label>
+              <select id="orderType">
+                <option value="">Select one</option>
+                <option>Soup order</option>
+                <option>Rice tray</option>
+                <option>Party box</option>
+                <option>Birthday package</option>
+                <option>Event catering</option>
+                <option>Bulk order</option>
+                <option>General enquiry</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="orderMessage">Details</label>
+              <textarea id="orderMessage" placeholder="Tell us what you want, your delivery area, quantity, date, and any special request."></textarea>
+            </div>
+
+            <button class="btn-primary submit-btn" type="button" onclick="sendToWhatsApp()">Send to WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left">
+        <strong>Hugs &amp; Mugs Abuja</strong>
+        <span>Warm plates, premium presentation, and content worth following.</span>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://www.tiktok.com/@hugsandmugsabuja" target="_blank" rel="noreferrer">TikTok</a>
+        <a href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/search/top?q=Hugs%20and%20Mugs%20Abuja" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="follow-modal" id="followModal" aria-live="polite">
+    <div class="follow-modal-head">
+      <h3>Follow Hugs &amp; Mugs first</h3>
+      <button class="close-modal" type="button" aria-label="Close" onclick="dismissFollowModal()">×</button>
+    </div>
+    <p>
+      For menu updates, delicacy drops, and fun content, follow TikTok, Instagram, and Facebook. When you are ready to order, tap through to WhatsApp.
+    </p>
+    <div class="modal-actions">
+      <a class="btn-secondary" href="https://www.tiktok.com/@hugsandmugsabuja" target="_blank" rel="noreferrer">TikTok</a>
+      <a class="btn-secondary" href="https://www.instagram.com/hugsandmugsabuja/" target="_blank" rel="noreferrer">Instagram</a>
+      <a class="btn-primary" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20would%20love%20to%20place%20an%20order.">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="sticky-order">
+    <span>Follow for live menu updates. Order on WhatsApp when you are ready.</span>
+    <a class="btn-primary" href="https://wa.me/2347063423268?text=Hello%20Hugs%20%26%20Mugs%2C%20I%20would%20like%20to%20place%20an%20order.">Order via WhatsApp</a>
+  </div>
+
+<script>
+  const followModal = document.getElementById("followModal");
+
+  function dismissFollowModal() {
+    followModal.classList.remove("show");
+    window.localStorage.setItem("hugsMugsFollowDismissed", "true");
+  }
+
+  window.addEventListener("load", () => {
+    const dismissed = window.localStorage.getItem("hugsMugsFollowDismissed");
+    if (!dismissed) {
+      setTimeout(() => followModal.classList.add("show"), 1400);
+    }
+  });
+
+  function sendToWhatsApp() {
+    const name = document.getElementById("customerName").value.trim() || "Customer";
+    const phone = document.getElementById("customerPhone").value.trim() || "Not provided";
+    const orderType = document.getElementById("orderType").value || "General enquiry";
+    const message = document.getElementById("orderMessage").value.trim() || "I'd like to know what is currently available.";
+
+    const text = encodeURIComponent(
+      "Hello Hugs & Mugs!\n\n" +
+      "Name: " + name + "\n" +
+      "Phone: " + phone + "\n" +
+      "Order type: " + orderType + "\n" +
+      "Details: " + message
+    );
+
+    window.open("https://wa.me/2347063423268?text=" + text, "_blank", "noopener");
+  }
+</script>
+</body>
+</html>
