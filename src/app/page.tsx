@@ -5,6 +5,27 @@ const menuItems = [
   { number: "03", name: "A little pause", detail: "Your quiet corner in a busy day." },
 ];
 
+const featuredMenu = [
+  {
+    name: "ÌTURA Signature Latte",
+    description: "Smooth espresso with silky steamed milk.",
+    price: "₦3,500",
+    category: "Coffee",
+  },
+  {
+    name: "Honey Cinnamon Flat White",
+    description: "A comforting flat white with honey and spice.",
+    price: "₦4,000",
+    category: "Coffee",
+  },
+  {
+    name: "Butter Croissant",
+    description: "A golden, flaky pastry for slow mornings.",
+    price: "₦2,500",
+    category: "Bakery",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--color-cream)]">
@@ -184,6 +205,68 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section
+        id="menu"
+        className="bg-[#f4ead5] px-6 py-16 sm:px-10 sm:py-24 lg:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-terracotta)]">
+                A taste of ÌTURA
+              </p>
+
+              <h2 className="font-[family-name:var(--font-fraunces)] text-4xl text-[var(--color-espresso)] sm:text-5xl">
+                Made to be savoured.
+              </h2>
+            </div>
+
+            <p className="max-w-sm text-sm leading-6 text-[var(--color-espresso)]/70">
+              From your first sip to your last bite, find a little something
+              to make the moment yours.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {featuredMenu.map((item, index) => (
+              <article
+                key={item.name}
+                className="group flex min-h-64 flex-col justify-between border border-[var(--color-espresso)]/15 bg-[var(--color-cream)] p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-8"
+              >
+                <div>
+                  <div className="mb-8 flex items-center justify-between">
+                    <span className="text-xs tracking-[0.2em] text-[var(--color-terracotta)]">
+                      0{index + 1}
+                    </span>
+
+                    <span className="rounded-full border border-[var(--color-sage)]/50 px-3 py-1 text-[10px] uppercase tracking-wider text-[var(--color-espresso)]/75">
+                      {item.category}
+                    </span>
+                  </div>
+
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-2xl text-[var(--color-espresso)]">
+                    {item.name}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-[var(--color-espresso)]/70">
+                    {item.description}
+                  </p>
+                </div>
+
+                <p className="mt-8 border-t border-[var(--color-espresso)]/15 pt-4 text-lg font-medium text-[var(--color-terracotta)]">
+                  {item.price}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-8 text-xs text-[var(--color-espresso)]/60">
+            Sample menu and prices for this website concept.
+          </p>
+        </div>
+      </section>
+
 
       <footer id="visit" className="bg-[var(--color-espresso)] px-6 py-10 text-[var(--color-cream)] sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row sm:items-center">
