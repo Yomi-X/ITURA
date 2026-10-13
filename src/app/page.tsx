@@ -1,3 +1,4 @@
+import GalleryPreview from "@/components/GalleryPreview";
 
 const menuItems = [
   { number: "01", name: "Slow mornings", detail: "Coffee, warm pastries, no rush." },
@@ -267,6 +268,7 @@ export default function Home() {
         </div>
       </section>
 
+      <GalleryPreview />
 
       <footer id="visit" className="bg-[var(--color-espresso)] px-6 py-10 text-[var(--color-cream)] sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row sm:items-center">
