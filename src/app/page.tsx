@@ -1,68 +1,12 @@
 import GalleryPreview from "@/components/GalleryPreview";
+import { menuItems } from "@/lib/menuData";
+import { experienceItems } from "@/lib/experienceData";
 
-const menuItems = [
-  { number: "01", name: "Slow mornings", detail: "Coffee, warm pastries, no rush." },
-  { number: "02", name: "Good company", detail: "Comfort food made for sharing." },
-  { number: "03", name: "A little pause", detail: "Your quiet corner in a busy day." },
-];
-
-const featuredMenu = [
-  {
-    name: "ÌTURA Signature Latte",
-    description: "Smooth espresso with silky steamed milk.",
-    price: "₦3,500",
-    category: "Coffee",
-  },
-  {
-    name: "Honey Cinnamon Flat White",
-    description: "A comforting flat white with honey and spice.",
-    price: "₦4,000",
-    category: "Coffee",
-  },
-  {
-    name: "Butter Croissant",
-    description: "A golden, flaky pastry for slow mornings.",
-    price: "₦2,500",
-    category: "Bakery",
-  },
-];
+const featuredMenu = menuItems.slice(0, 3);
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--color-cream)]">
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
-        <a href="#home" className="flex flex-col leading-none">
-          <span className="font-[family-name:var(--font-fraunces)] text-3xl font-semibold tracking-tight">
-            ÌTURA<span className="text-[var(--color-terracotta)]">.</span>
-          </span>
-          <span className="mt-2 text-[9px] font-medium uppercase tracking-[0.28em] text-[var(--color-espresso)]/65">
-            Coffee & Comfort
-          </span>
-        </a>
-
-        <nav className="hidden items-center gap-8 text-sm text-[var(--color-espresso)]/80 md:flex">
-          <a href="#welcome" className="transition-colors hover:text-[var(--color-terracotta)]">
-            Our philosophy
-          </a>
-          <a href="#rituals" className="transition-colors hover:text-[var(--color-terracotta)]">
-            The experience
-          </a>
-          <a
-            href="#visit"
-            className="rounded-full border border-[var(--color-espresso)]/25 px-5 py-3 transition-colors hover:bg-[var(--color-espresso)] hover:text-[var(--color-cream)]"
-          >
-            Find your corner
-          </a>
-        </nav>
-
-        <a
-          href="#visit"
-          className="rounded-full bg-[var(--color-espresso)] px-4 py-3 text-xs font-medium text-[var(--color-cream)] md:hidden"
-        >
-          Visit us
-        </a>
-      </header>
-
       <section
         id="home"
         className="mx-auto grid max-w-7xl gap-10 px-6 pb-16 pt-8 sm:px-10 sm:pb-24 sm:pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:px-16 lg:pb-28"
@@ -188,7 +132,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
-          {menuItems.map((item) => (
+          {experienceItems.map((item) => (
             <article
               key={item.number}
               className="border-t border-[var(--color-espresso)]/20 py-6 sm:py-8"
