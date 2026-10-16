@@ -17,7 +17,8 @@ export default function Home() {
             A softer kind of everyday
           </p>
 
-          <h1 className="max-w-2xl font-[family-name:var(--font-fraunces)] text-6xl font-medium leading-[0.98] tracking-tight text-[var(--color-espresso)] sm:text-7xl lg:text-8xl">
+          
+          <h1 className="max-w-2xl font-[family-name:var(--font-fraunces)] text-6xl font-normal leading-[0.98] tracking-[-0.04em] text-[var(--color-espresso)] sm:text-7xl lg:text-8xl">
             Your corner
             <br />
             of <span className="italic text-[var(--color-terracotta)]">calm.</span>
