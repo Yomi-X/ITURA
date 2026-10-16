@@ -11,8 +11,8 @@ export default function MenuPage() {
             Made with care in Abuja
           </p>
 
-          <h1 className="font-[family-name:var(--font-fraunces)] text-5xl text-[var(--color-espresso)] sm:text-6xl">
-            The menu.
+          <h1 className="font-[family-name:var(--font-fraunces)] text-5xl font-normal leading-[1.05] tracking-[-0.035em] text-[var(--color-espresso)] sm:text-6xl">
+            Something to <span className="italic text-[var(--color-terracotta)]">savour.</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-[var(--color-espresso)]/70">
@@ -37,22 +37,28 @@ export default function MenuPage() {
               </h2>
 
               <div className="grid gap-4 md:grid-cols-2">
-                {items.map((item) => (
+                {items.map((item, index) => (
                   <article
                     key={item.name}
-                    className="flex items-start justify-between gap-5 border border-[var(--color-espresso)]/15 bg-white/40 p-5 sm:p-6"
+                    className="group flex items-start justify-between gap-5 border-b border-[var(--color-espresso)]/15 py-6 transition-colors duration-300 hover:border-[var(--color-terracotta)]/60 sm:py-7"
                   >
-                    <div>
-                      <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-[var(--color-espresso)]">
-                        {item.name}
-                      </h3>
+                    <div className="flex gap-4">
+                      <span className="pt-1 text-xs tracking-[0.15em] text-[var(--color-terracotta)]/80">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
 
-                      <p className="mt-2 text-sm leading-6 text-[var(--color-espresso)]/70">
-                        {item.description}
-                      </p>
+                      <div>
+                        <h3 className="font-[family-name:var(--font-fraunces)] text-xl text-[var(--color-espresso)] transition-colors duration-300 group-hover:text-[var(--color-terracotta)] sm:text-2xl">
+                          {item.name}
+                        </h3>
+
+                        <p className="mt-2 max-w-md text-sm leading-6 text-[var(--color-espresso)]/70">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
 
-                    <p className="shrink-0 text-sm font-semibold text-[var(--color-terracotta)]">
+                    <p className="shrink-0 pt-1 text-sm font-semibold tabular-nums text-[var(--color-terracotta)]">
                       {item.price}
                     </p>
                   </article>
