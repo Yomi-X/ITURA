@@ -5,9 +5,9 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Events", href: "/events" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Experience", href: "/#rituals" },
+  { label: "About", href: "/#welcome" },
+  { label: "Visit us", href: "/#visit" },
 ];
 
 export default function Navbar() {

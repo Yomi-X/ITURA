@@ -1,19 +1,21 @@
-
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import localFont from "next/font/local";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
+const fraunces = localFont({
+  src: "./fonts/Fraunces-Variable.ttf",
   variable: "--font-fraunces",
   display: "swap",
+  weight: "100 900",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const dmSans = localFont({
+  src: "./fonts/DM-Sans-Variable.ttf",
+  variable: "--font-dm-sans",
   display: "swap",
+  weight: "100 1000",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${inter.variable} antialiased`}
+        className={`${fraunces.variable} ${dmSans.variable} antialiased`}
       >
         <Navbar />
         {children}
