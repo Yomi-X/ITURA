@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
 const fraunces = localFont({
   src: "./fonts/Fraunces-Variable.ttf",
